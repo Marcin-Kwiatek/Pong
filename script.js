@@ -20,4 +20,18 @@ function motionBall() {
     ball.style.top = ballPositionTop + motionTop + "px"
     ball.style.left = ballPositionLeft + motionLeft + "px"
 }
+
 window.setInterval(motionBall, 200)
+window.addEventListener("keydown", racketMotion)
+
+function racketMotion(event) {
+    let racket = document.getElementById("racket")
+    let racketPosition = parseInt(racket.style.top)
+    if (event.keyCode == '38' && racketPosition>0) {
+        racket.style.top = racketPosition - 20 + "px"
+    }
+    if (event.keyCode == '40' && racketPosition<460) {
+        racket.style.top = racketPosition + 20 + "px"
+    }
+}
+
