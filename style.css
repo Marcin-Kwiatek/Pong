@@ -22,3 +22,8 @@ body{
     min-height: 40px;
     position: absolute;
 }
+#score{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}

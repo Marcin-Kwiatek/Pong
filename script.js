@@ -1,5 +1,6 @@
 let motionTop = 2
 let motionLeft = 2
+let score = 0
 
 function motionBall() {
     let ball = document.getElementById("ball")
@@ -40,6 +41,8 @@ function hitRacket(ballPositionLeft, ballPositionTop) {
     let racketPosition = parseInt(racket.style.top)
     if (ballPositionLeft === 50 && ballPositionTop + 20 >= racketPosition && ballPositionTop <= racketPosition + 40) {
         motionLeft = - motionLeft
+        score++
+        document.getElementById("score").innerHTML = "score : " + score
     }
 }
 
